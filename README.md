@@ -10,7 +10,7 @@ It grabs links to all photos in an album, and creates an embed link for each pho
 3. Run the script, and check embed.html for the code
 4. Copy paste the code into ebay and you have all photos in your listing
 
-# future 
+# Future 
 - add all these photos to a html5 album
 - take out the need for page numbers
 - take out need to manually change code
