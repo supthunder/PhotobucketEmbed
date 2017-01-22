@@ -48,10 +48,6 @@ def embed(url,user,linkToAlbum):
 	f.close()
 
 def main():
-	
-
-	
-
 	# delete old file if it exists
 	try:
 		os.remove('embed.html')
@@ -65,15 +61,20 @@ def main():
 	f.write(styleSheet)
 	f.close()
 
-	# Change these
-	user = ""
-	# linkToAlbum = "Air%20Yeezy%202%20Pure%20Platinum%20-%20JohnsunderUSA"
-	linkToAlbum = ""
+	user = "user/"
+	# Change username
+	user += "userName"
+
+	user += "/"
+
+	# Change the link to album
+	# For example:
+	linkToAlbum = "Some%20Name%201%20%20Name%20-%20name"
 
 
 	libraryLink = "http://s1146.photobucket.com/"+user+"library/"+linkToAlbum
 	url = libraryLink+"?sort=3&page="
-	# url = "http://s1146.photobucket.com/user/johntheseller/embed/Air%20Yeezy%202%20Pure%20Platinum%20-%20JohnsunderUSA/story"
+
 
 	pages = int(input("Enter # of pages: ")) + 1
 	for page in range(1,pages):
@@ -93,9 +94,10 @@ def main():
 	f.write(jsScript)
 	f.close()
 
-
 	currentPath = os.getcwd()
 	print(currentPath)
+
+	# Windows only
 	openUrl = currentPath+"\embed.html"
 	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(openUrl)
 main()
